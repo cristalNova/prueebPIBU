@@ -45,6 +45,16 @@ body{
     width: 100vw;
 }
 
+@media (max-width: 768px) {
+    .sidebar {
+        width: 100%;
+        position: relative;
+    }
+    .content {
+        margin-left: 0;
+    }
+}
+
 .upper-board{
     height: 90px;
     background-color: var(--blue-icesi);
