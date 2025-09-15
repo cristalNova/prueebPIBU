@@ -45,13 +45,9 @@ body{
     width: 100vw;
 }
 
-@media (max-width: 768px) {
-    .sidebar {
+@media (max-width: 400px) {
+    body {
         width: 100%;
-        position: relative;
-    }
-    .content {
-        margin-left: 0;
     }
 }
 
