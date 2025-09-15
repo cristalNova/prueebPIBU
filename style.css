@@ -1,0 +1,257 @@
+/* resetting */
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: "Plus Jakarta Sans";
+    src: url(fonts\PlusJakartaSans-Regular.ttf) format(truetype);
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: "Plus Jakarta Sans";
+    src: url(fonts\PlusJakartaSans-Bold.ttf) format(truetype);
+    font-weight: 700;
+}
+
+:root{
+    /*Main palette*/
+    --blue-icesi: #5454e9;
+    --white: #ffffff;
+
+    /*Complementary palette*/
+    --yellow-icesi: #e4eb60;
+    --orange-icesi: #e9683b;
+    --black: #000000;
+    --purple-icesi: #865cf0;
+    --green-icesi: #4cb979;
+    --grey-1: #88898c;
+    --grey-2: #cecfd4;
+    --main-font: "Plus Jakarta Sans", Arial;
+
+    /*Hover*/
+    --text-white-hover:#4fbabf;
+}
+
+html, body {
+    overflow-x: hidden;
+}
+
+body{
+    width: 100vw;
+}
+
+.upper-board{
+    height: 90px;
+    background-color: var(--blue-icesi);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 1.5rem;
+}
+
+.logo{
+    height: 60%;
+    color: var(--white);
+    width: auto;
+}
+
+.icons{
+    fill: var(--white);
+    stroke: var(--white);
+    color: var(--white);
+    overflow: visible;
+}
+
+.menu{
+    height: 34px;
+    width: 27px;
+    stroke-width: 2px;
+}
+
+.search{
+    width: 17px; 
+    height: 17px;
+}
+
+.upper-right{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: auto;
+    width: auto;
+    gap: 2rem;
+}
+
+.upper-board:hover > *{
+    cursor: pointer;
+}
+
+.menu-section{
+    gap: 0.5rem;
+}
+
+.menu-section:hover .menu,
+.menu-section:hover p{
+    color: var(--text-white-hover);
+    stroke: var(--text-white-hover);
+}
+
+.upper-right p{
+    font-family: var(--main-font);
+    font-weight: 700;
+    color: var(--white);
+    font-size: 1rem;
+}
+
+.search-section{
+    border-radius: 50%;
+    width: 35px;
+    height: 35px;
+    justify-content: center;
+}
+
+.search-section:hover{
+    background-color: var(--black);
+}
+
+.right-container{
+    height: 100vh;
+    width: 400px;
+    background-color: var(--black);
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 1;
+    padding: 5rem 2rem;
+    display: flex;
+    flex-direction: column;
+    transition: opacity 0.3s ease transform 0.3s ease;
+
+    opacity: 0;
+    transform: translateX(100%);
+    pointer-events: none;
+    transition: opacity 0.8s ease, transform 0.8s ease;
+    z-index: 1000;
+}
+
+.right-container.active {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto; /* ahora se puede interactuar */
+}
+
+.menu-item{
+    font-family: var(--main-font);
+    color: var(--white);
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    height: 3rem;
+}
+
+.menu-item svg{
+    color: var(--yellow-icesi);
+}
+
+.menu-item:hover{
+    color: var(--yellow-icesi);
+    cursor: pointer;
+}
+
+.menu-item:hover p{
+    transform: translateX(10px);
+}
+
+.menu-item p {
+    transition: transform 0.3s ease;
+}
+
+.list{
+    list-style-type: none;
+}
+
+.media-item{
+    background-color: var(--grey-1);
+    width: 4rem;
+    aspect-ratio: 1 / 1;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.media-item svg{
+    color: var(--white);
+}
+
+.media-item:hover{
+    background-color: var(--purple-icesi);
+    cursor: pointer;
+}
+
+.social-media{
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+    bottom: 4px;
+    margin-top: auto;
+}
+
+.exit{
+    display: flex;
+    width: 100%;
+    margin: 1rem 0;
+}
+
+#circle{
+    background-color: #ecfaff;
+    margin-left: auto;
+    width: 2rem;
+    aspect-ratio: 1 / 1;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#circle:hover, #circle:hover svg{
+    background-color: var(--purple-icesi);
+    cursor: pointer;
+    color: var(--white);
+}
+
+#circle svg{
+    color: var(--black);
+}
+
+.login-announcement{
+    font-family: var(--main-font);
+    background-color: var(--blue-icesi);
+    color: var(--white);
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    padding: 25px 50px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 5px;
+    border: 0.2rem solid #8080ef;
+}
+
+.login-announcement p:first-child{
+    font-weight: 700;
+}
+
+.login-link:hover{
+    color: var(--text-white-hover);
+    cursor: pointer;
+}
